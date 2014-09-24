@@ -6,6 +6,10 @@
 <%@include file="/head.jsp"%>
 </head>
 <body>
+	<script>
+		window.location.href = "${base}index";
+	</script>
+	<%-- 
 	<div>content</div>
 	<h1>..............</h1>
 	<p>login:${login }</p>
@@ -13,6 +17,7 @@
 	
 	<p>user:${user.nickname }</p>
 	<img src="${user.headimgurl}">
-	<p>end</p>
+	<p>end</p> 
+	--%>
 </body>
 </html>

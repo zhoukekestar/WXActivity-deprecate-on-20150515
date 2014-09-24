@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.otovc.model.User">
+
+	<insert id="add" parameterType="User" keyProperty="id" useGeneratedKeys="true" >
+		insert into t_user
+		(
+			openid, nickname, imgurl, code, created
+		) 
+			values 
+		(
+			#{openid}, #{nickname}, #{imgurl}, #{code}, #{created}
+		)
+	</insert>
+
+	<update id="update" parameterType="Map">
+		update t_user 
+		<set>
+			<if test="null != openid">openid=#{openid},</if>
+			<if test="null != nickname">nickname=#{nickname},</if>
+			<if test="null != imgurl">imgurl=#{imgurl},</if>
+			<if test="null != code">code=#{code}</if>
+		</set>
+		where id = #{id}
+	</update>
+
+</mapper>

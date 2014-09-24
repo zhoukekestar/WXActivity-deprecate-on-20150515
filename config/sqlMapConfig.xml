@@ -1,0 +1,28 @@
+<!DOCTYPE configuration  
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		
+		<typeAlias type="com.otovc.model.User" alias="User" />
+		<typeAlias type="com.otovc.model.UserShareLog" alias="UserShareLog" />
+
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="com.otovc.system.DbcpDataSourceFactory" />
+
+		</environment>
+	</environments>
+	
+	<mappers>
+
+		<mapper resource="com/otovc/model/User.xml" />
+		<mapper resource="com/otovc/model/UserShareLog.xml" />
+
+	</mappers>
+
+</configuration>  

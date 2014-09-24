@@ -8,8 +8,9 @@
 <script src="js/jquery.min.js"></script>
 
 <script>
-    $(function () {
-        var temp = ${login}1;
+	function changeTo()
+	{
+		var temp = ${login}1;
         var path = window.location.href.toString();
         var proname = "/WXActivity/";
         path = path.substring(path.indexOf(proname) + proname.length, path.length);
@@ -19,7 +20,11 @@
             window.location.href = "${base}WXLogin?url=" + encodeURIComponent(path);
         else
             console.log(window.location.href);
+	}
+
+    $(function () {
         
+        //changeTo();
         function onBridgeReady(){
        	 	isWX = 1;
         	WeixinJSBridge.call('hideOptionMenu');
